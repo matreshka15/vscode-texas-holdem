@@ -117,8 +117,8 @@ For questions, suggestions, or bug reports, please contact:
 
 - **Email**: matreshka999@icloud.com
   **电子邮件**：matreshka999@icloud.com
-- **GitHub Issues**: [Submit an issue](https://github.com/your-repo/texas-holdem/issues)
-  **GitHub 问题**：[提交问题](https://github.com/your-repo/texas-holdem/issues)
+- **GitHub Issues**: [Submit an issue](https://github.com/matreshka15/vscode-texas-holdem/issues)
+  **GitHub 问题**：[提交问题](https://github.com/matreshka15/vscode-texas-holdem/issues)
 
 ## License
 ## 许可证
