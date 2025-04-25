@@ -4,6 +4,8 @@
 This is a Visual Studio Code extension that allows users to play a simple Texas Holdem game directly within the editor.
 这是一个 Visual Studio Code 扩展，允许用户直接在编辑器中玩简单的德州扑克游戏。
 
+![游戏界面截图](./images/game-screenshot.png)
+
 ## Features
 ## 功能
 
