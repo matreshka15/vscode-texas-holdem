@@ -1,0 +1,33 @@
+{
+    "compilerOptions": {
+        "target": "ES6", // 保持目标为 ES6
+        "module": "commonjs", // 使用 CommonJS 模块
+        "outDir": "./dist", // 输出目录
+        "rootDir": "./src", // 源代码根目录
+        "strict": true, // 启用所有严格类型检查选项
+        "esModuleInterop": true, // 允许默认导入非 ES 模块
+        "skipLibCheck": true, // 跳过库文件类型检查
+        "forceConsistentCasingInFileNames": true, // 强制文件名一致大小写
+        "resolveJsonModule": true, // 支持导入 JSON 文件
+        "noImplicitAny": true, // 禁止隐式的 any 类型
+        "noUnusedLocals": true, // 检查未使用的局部变量
+        "noUnusedParameters": true, // 检查未使用的函数参数
+        "noImplicitReturns": true, // 检查函数是否有隐式返回
+        "noFallthroughCasesInSwitch": true, // 检查 switch 语句中的 fallthrough
+        "moduleResolution": "node", // 使用 Node.js 模块解析策略
+        "allowSyntheticDefaultImports": true, // 允许合成默认导入
+        "inlineSourceMap": true, // 内联生成 source map
+        "inlineSources": true, // 内联源代码到 source map
+        "lib": ["ES6", "DOM"], // 包含 ES6 和 DOM 类型定义
+        "types": ["node", "vscode"] // 包含 Node.js 和 VSCode 类型定义
+    },
+    "include": [
+        "src/**/*.ts" // 包含 src 文件夹下的所有 TypeScript 文件
+    ],
+    "exclude": [
+        "node_modules", // 排除 node_modules
+        "**/*.spec.ts", // 排除测试文件
+        "dist", // 排除输出目录
+        ".vscode" // 排除 VSCode 配置文件夹
+    ]
+}

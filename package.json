@@ -1,0 +1,103 @@
+{
+    "name": "texas-holdem",
+    "displayName": "Texas Holdem",
+    "description": "Play Texas Holdem directly in Visual Studio Code with an interactive interface.",
+    "version": "0.0.1",
+    "author": "Hank <matreshka999@icloud.com>",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/matreshka15/vscode-texas-holdem"
+    },
+    "bugs": {
+        "url": "https://github.com/matreshka15/vscode-texas-holdem/issues"
+    },
+    "homepage": "https://github.com/matreshka15/vscode-texas-holdem",
+    "engines": {
+        "vscode": "^1.60.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onCommand:extension.startTexasHoldem"
+    ],
+    "main": "./dist/extension.js",
+    "contributes": {
+        "commands": [
+            {
+                "command": "extension.startTexasHoldem",
+                "title": "开始游戏"
+            },
+            {
+                "command": "extension.call",
+                "title": "跟牌"
+            },
+            {
+                "command": "extension.raise",
+                "title": "加倍"
+            },
+            {
+                "command": "extension.fold",
+                "title": "弃牌"
+            }
+        ],
+        "viewsContainers": {
+            "activitybar": [
+                {
+                    "id": "texasHoldem",
+                    "title": "Texas Holdem",
+                    "icon": "resources/icon.svg"
+                }
+            ]
+        },
+        "views": {
+            "texasHoldem": [
+                {
+                    "id": "texasHoldemTable",
+                    "name": "Table"
+                },
+                {
+                    "id": "texasHoldemControls",
+                    "name": "Control"
+                },
+                {
+                    "id": "texasHoldemAnimation",
+                    "name": "Animation"
+                },
+                {
+                    "id": "texasHoldemLogs",
+                    "name": "Log"
+                }
+            ]
+        }
+    },
+    "scripts": {
+        "lint": "eslint . --ext .ts,.tsx",
+        "pretest": "npm run lint",
+        "test": "node ./out/test/runTest.js",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "prepackage": "npm run compile",
+        "package": "vsce package",
+        "publish": "vsce publish",
+        "clean": "rimraf dist && rimraf out",
+        "prepare": "npm run compile"
+    },
+    "devDependencies": {
+        "@types/glob": "^7.1.3",
+        "@types/mocha": "^8.2.2",
+        "@types/node": "^14.x",
+        "@types/vscode": "^1.60.0",
+        "@typescript-eslint/eslint-plugin": "^4.30.0",
+        "@typescript-eslint/parser": "^4.30.0",
+        "eslint": "^7.32.0",
+        "glob": "^7.1.7",
+        "mocha": "^9.1.1",
+        "rimraf": "^3.0.2",
+        "typescript": "^4.4.3",
+        "vsce": "^1.93.0",
+        "vscode-test": "^1.6.1"
+    },
+    "dependencies": {}
+}
