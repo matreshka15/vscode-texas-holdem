@@ -49,7 +49,7 @@ class Deck {
     }
 }
 
-enum GamePhase {
+export enum GamePhase {
     PreFlop = '发手牌阶段',
     Flop = '翻牌阶段',
     Turn = '转牌阶段',
@@ -297,8 +297,22 @@ class TexasHoldemGame extends EventEmitter {
         this.currentPlayerIndex = (this.currentPlayerIndex + 1) % this.players.length;
         await this.handleBettingPhase(treeDataProvider, this.getNextPhase(phase), logProvider, tableProvider); // 添加 tableProvider 参数
     }
+    // 获取当前游戏阶段
+    private getCurrentGamePhase(): GamePhase {
+        if (this.communityCards.length === 0) {
+            return GamePhase.PreFlop;
+        } else if (this.communityCards.length === 3) {
+            return GamePhase.Flop;
+        } else if (this.communityCards.length === 4) {
+            return GamePhase.Turn;
+        } else if (this.communityCards.length === 5) {
+            return GamePhase.River;
+        } else {
+            return GamePhase.Showdown; // 默认返回 Showdown
+        }
+    }
 
-    // 新增一个辅助方法，用于获取下一个阶段
+    // 获取下一个阶段
     private getNextPhase(currentPhase: GamePhase): GamePhase {
         switch (currentPhase) {
             case GamePhase.Flop:
@@ -553,6 +567,7 @@ class TexasHoldemGame extends EventEmitter {
             communityCards: this.communityCards,
             currentBet: this.getCurrentBet(), // 使用动态获取的当前赌注
             pot: this.pot,
+            phase: this.getCurrentGamePhase(),
         };
 
         const action = TexasHoldemAI.decideAction(currentPlayer, gameState);
