@@ -1,10 +1,4 @@
-<!--
- * @Date: 2025-04-25 17:49:21
- * @LastEditTime: 2025-04-25 17:49:23
- * @LastEditors: LiDongYu @Hangzhou Brainlink Technology Co., Ltd
- * @Description:
- * Copyright (c) 2023 by Hangzhou Brainlink Technology Co., Ltd, All Rights Reserved.
--->
+
 MIT License
 
 Copyright (c) 2025 Hank

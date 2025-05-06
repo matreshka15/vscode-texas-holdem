@@ -1,0 +1,13 @@
+<svg width="200" height="300" xmlns="http://www.w3.org/2000/svg">
+  <!-- 卡牌背景 - 只有边框 -->
+  <rect x="10" y="10" width="180" height="280" rx="15" fill="none" stroke="black" stroke-width="2"/>
+  
+  <!-- 中间的大红心 - 只有边框 -->
+  <path d="M100 100 C75 80, 40 100, 40 130 C40 155, 65 180, 100 220 C135 180, 160 155, 160 130 C160 100, 125 80, 100 100" fill="none" stroke="red" stroke-width="3"/>
+  
+  <!-- 左上角大字母H -->
+  <text x="15" y="60" font-family="Arial" font-size="48" font-weight="bold" fill="black">H</text>
+  
+  <!-- 右下角大字母J -->
+  <text x="160" y="280" font-family="Arial" font-size="48" font-weight="bold" fill="black">J</text>
+</svg>

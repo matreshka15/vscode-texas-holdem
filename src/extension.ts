@@ -169,13 +169,13 @@ class TexasHoldemGame extends EventEmitter {
             currentIndex = (currentIndex + 1) % shuffledPlayers.length;
         }
 
-        // 最终选定庄家
-        const dealerIndex = currentIndex;
+        // 随机选择一个最终停留的位置
+        const randomStopIndex = Math.floor(Math.random() * shuffledPlayers.length);
 
         // 闪烁几次以确认庄家
         for (let i = 0; i < 3; i++) {
             const frames: AnimationState = shuffledPlayers.map((player, index) =>
-                index === dealerIndex ? (i % 2 === 0 ? `> ${player.name} <` : `  ${player.name}`) : `  ${player.name}`
+                index === randomStopIndex ? (i % 2 === 0 ? `> ${player.name} <` : `  ${player.name}`) : `  ${player.name}`
             );
 
             animationProvider.setAnimationState(frames);
@@ -184,7 +184,7 @@ class TexasHoldemGame extends EventEmitter {
         }
 
         // 返回庄家在原始玩家数组中的索引
-        return shuffledPlayers[dealerIndex].originalIndex;
+        return shuffledPlayers[randomStopIndex].originalIndex;
     }
 
     public async startGame(
